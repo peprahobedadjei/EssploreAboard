@@ -20,7 +20,7 @@ export default function Navbar() {
       if (!isHomepage) return;
 
       const sections = ['home', 'about', 'services', 'faq'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 120; // Increased offset for better detection
 
       sections.forEach(section => {
         const element = document.getElementById(section);
@@ -38,17 +38,43 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomepage]);
 
+  // Handle navigation from external pages with hash
+  useEffect(() => {
+    if (isHomepage && window.location.hash) {
+      const sectionId = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }, 500); // Longer delay for page load
+    }
+  }, [isHomepage]);
+
   const scrollToSection = (sectionId) => {
+    // Close mobile menu first
+    setMobileMenuOpen(false);
+    
     if (isHomepage) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Add a small delay to ensure menu closes before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop - 80; // Account for navbar height
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     } else {
       // Navigate to homepage with hash
       router.push(`/#${sectionId}`);
     }
-    setMobileMenuOpen(false);
   };
 
   const navItems = [
@@ -79,7 +105,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="relative">
                 <img
-                  src="/assets/essplore_logo.png"
+                  src="/assets/logo.png"
                   alt="Essplore Abroad"
                   className={`transition-all duration-300 ${
                     scrolled ? 'h-8 w-auto lg:h-10' : 'h-10 w-auto lg:h-12'
