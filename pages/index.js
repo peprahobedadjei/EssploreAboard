@@ -6,6 +6,7 @@ import Layout from "@/components/Layout/Layout";
 import AboutUsSection from "@/components/Homepage/AboutSection";
 import ServicesSection from "@/components/Homepage/ServiceSection";
 import FAQSection from "@/components/Homepage/FaqSection";
+import FlagsSection from "@/components/Homepage/FlagSection";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -80,6 +81,7 @@ export default function Home() {
 
       {/* All Homepage Sections */}
       <HeroSection />
+      <FlagsSection/>
       <AboutUsSection/>
       <ServicesSection/>
       <FAQSection/>

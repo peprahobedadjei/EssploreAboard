@@ -44,12 +44,6 @@ export default function HeroSection() {
     }
   };
 
-  const stats = [
-    { icon: Globe, number: "50+", label: "Countries" },
-    { icon: Users, number: "10K+", label: "Students Placed" },
-    { icon: Award, number: "98%", label: "Success Rate" },
-    { icon: GraduationCap, number: "500+", label: "Universities" }
-  ];
 
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
@@ -155,37 +149,6 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Stats Section */}
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white/80 backdrop-blur-lg rounded-3xl p-6 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500"
-              >
-                <motion.div
-                  variants={floatingVariants}
-                  animate="animate"
-                  style={{ animationDelay: `${index * 0.5}s` }}
-                  className="flex flex-col items-center"
-                >
-                  <div className="bg-gradient-to-br from-[#450f8c] to-purple-600 p-3 rounded-2xl mb-4 shadow-lg">
-                    <stat.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <motion.h3
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: index * 0.2 }}
-                    className="text-3xl font-black text-gray-900 mb-2"
-                  >
-                    {stat.number}
-                  </motion.h3>
-                  <p className="text-gray-600 font-semibold text-sm">{stat.label}</p>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* Hero Image Section */}
