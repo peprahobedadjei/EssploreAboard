@@ -105,7 +105,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center space-x-3">
               <div className="relative">
                 <img
-                  src="/assets/logo.png"
+                  src="/assets/essplore_logo.png"
                   alt="Essplore Abroad"
                   className={`transition-all duration-300 ${
                     scrolled ? 'h-8 w-auto lg:h-10' : 'h-10 w-auto lg:h-12'
