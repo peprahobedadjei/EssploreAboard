@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from 'next/router';
 import { 
   Plus, 
   Minus, 
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 export default function FAQSection() {
+  const router = useRouter();
   const [openItems, setOpenItems] = useState(new Set([0])); // First item open by default
 
   const toggleItem = (index) => {
@@ -24,6 +26,33 @@ export default function FAQSection() {
       newOpenItems.add(index);
     }
     setOpenItems(newOpenItems);
+  };
+
+  // Contact action handlers
+  const handleEmailClick = () => {
+    router.push('/contact', undefined, { scroll: true });
+  };
+
+  const handleCallClick = () => {
+    window.location.href = 'tel:+12166241878';
+  };
+
+  const handleWhatsAppClick = () => {
+    // Create a message for WhatsApp
+    const message = encodeURIComponent("Hello! I have a question about studying abroad. Could you please help me?");
+    
+    // Show options to user or use primary number
+    const primaryNumber = "+12166241878";
+    const secondaryNumber = "+233267696745";
+    
+    // You can either:
+    // 1. Use primary number directly
+    // window.open(`https://wa.me/${primaryNumber.replace('+', '')}?text=${message}`, '_blank');
+    
+    // 2. Or show a selection (uncomment below if you want user to choose)
+    const selectedNumber = confirm("Choose WhatsApp number:\nOK = US Number (+1 216 624 1878)\nCancel = Ghana Number (+233 26 769 6745)") 
+      ? primaryNumber : secondaryNumber;
+    window.open(`https://wa.me/${selectedNumber.replace('+', '')}?text=${message}`, '_blank');
   };
 
   const containerVariants = {
@@ -131,21 +160,24 @@ export default function FAQSection() {
       title: "Call Us",
       description: "Speak directly with our counselors",
       action: "Call Now",
-      color: "from-green-500 to-emerald-600"
+      color: "from-green-500 to-emerald-600",
+      onClick: handleCallClick
     },
     {
       icon: Mail,
       title: "Email Support",
       description: "Get detailed answers via email",
       action: "Send Email",
-      color: "from-blue-500 to-indigo-600"
+      color: "from-blue-500 to-indigo-600",
+      onClick: handleEmailClick
     },
     {
       icon: MessageCircle,
-      title: "Whatsapp",
+      title: "WhatsApp",
       description: "Instant support during business hours",
       action: "Start Chat",
-      color: "from-purple-500 to-violet-600"
+      color: "from-purple-500 to-violet-600",
+      onClick: handleWhatsAppClick
     }
   ];
 
@@ -307,6 +339,7 @@ export default function FAQSection() {
                 key={index}
                 whileHover={{ y: -3, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={option.onClick}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
               >
                 <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${option.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>

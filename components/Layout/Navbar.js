@@ -150,7 +150,7 @@ export default function Navbar() {
           </div>
           
           {/* CTA Button - Desktop */}
-          <div className="hidden lg:block">
+          {/* <div className="hidden lg:block">
             <motion.button
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.95 }}
@@ -160,7 +160,7 @@ export default function Navbar() {
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#f96714] to-[#450f8c] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.button>
-          </div>
+          </div> */}
           
           {/* Mobile menu button */}
           <div className="lg:hidden">
@@ -221,7 +221,7 @@ export default function Navbar() {
                 ))}
                 
                 {/* Mobile CTA */}
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: navItems.length * 0.1 }}
@@ -233,7 +233,7 @@ export default function Navbar() {
                   >
                     Get Started
                   </button>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
           )}

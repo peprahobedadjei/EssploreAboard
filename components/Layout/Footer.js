@@ -59,9 +59,9 @@ export default function Footer() {
   ];
 
   const contactInfo = [
-    { icon: Mail, text: "info@essploreaboard.com", href: "mailto:info@essploreaboard.com" },
-    { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, text: "123 Education Street, Learning City, LC 12345", href: "#" }
+    { icon: Mail, text: "essploreabroad@gmail.com", href: "mailto:essploreabroad@gmail.com" },
+    { icon: Phone, text: "+1 (216) 624-1878", href: "tel:+1216624-1878" },
+    { icon: MapPin, text: "2390 E ASBURY AVE ,APT 512, DENVER, CO ", href: "#" }
   ];
 
   const socialLinks = [
@@ -122,27 +122,6 @@ export default function Footer() {
                 </motion.a>
               ))}
             </div>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-semibold text-gray-900 mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href}>
-                    <motion.span
-                      variants={linkVariants}
-                      whileHover="hover"
-                      className="text-gray-600 hover:text-[#450f8c] transition-colors duration-300 cursor-pointer text-sm flex items-center group"
-                    >
-                      {link.label}
-                      <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </motion.span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </motion.div>
 
           {/* Services */}
@@ -213,17 +192,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-6 text-sm text-gray-500">
               <span>&copy; 2025 Essplore Abroad. All rights reserved.</span>
-              <div className="hidden md:flex items-center space-x-4">
-                <Link href="/privacy" className="hover:text-[#450f8c] transition-colors duration-300">
-                  Privacy Policy
-                </Link>
-                <span className="text-gray-300">•</span>
-                <Link href="/terms" className="hover:text-[#450f8c] transition-colors duration-300">
-                  Terms of Service
-                </Link>
-              </div>
             </div>
-            
             <div className="flex items-center space-x-2 text-sm text-gray-500">
               <Globe className="w-4 h-4" />
               <span>Serving students worldwide</span>

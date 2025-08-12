@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useRouter } from 'next/router';
 import { ArrowRight, Globe, Users, Award, BookOpen, MapPin, GraduationCap } from "lucide-react";
 
 export default function HeroSection() {
+    const router = useRouter();
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -118,7 +120,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
           >
             <motion.button
-              onClick={() => scrollToSection("roadmap")}
+              onClick={() => router.push('/contact')}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="group bg-gradient-to-r from-[#f96714] to-orange-600 text-white hover:from-orange-600 hover:to-[#f96714] px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 shadow-2xl hover:shadow-orange-500/25 min-w-[280px] relative overflow-hidden"

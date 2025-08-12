@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import LoadingScreen from "@/components/Homepage/LoadingScreen";
 import HeroSection from "@/components/Homepage/HeroSection";
 import Layout from "@/components/Layout/Layout";
 import AboutUsSection from "@/components/Homepage/AboutSection";
@@ -9,33 +8,8 @@ import FAQSection from "@/components/Homepage/FaqSection";
 import FlagsSection from "@/components/Homepage/FlagSection";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Loading animation duration
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Handle hash navigation when coming from other pages
-  useEffect(() => {
-    if (!loading && window.location.hash) {
-      const hash = window.location.hash.replace("#", "");
-      const element = document.getElementById(hash);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    }
-  }, [loading]);
-
-  if (loading) {
-    return <LoadingScreen />;
-  }
 
   return (
     <>
