@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import { 
   Calendar, 
   Clock, 
@@ -161,6 +162,9 @@ export default function BookConsultation() {
   return (
     <section className="py-16 sm:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
       {/* Background Elements */}
+            <Head>
+          <title>EssploreAboard - Study Abroad Excellence</title>
+      </Head>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ rotate: 360 }}

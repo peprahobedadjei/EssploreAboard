@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 import { ArrowRight, Globe, Users, Award, BookOpen, MapPin, GraduationCap } from "lucide-react";
+import Head from "next/head";
 
 export default function HeroSection() {
     const router = useRouter();
@@ -50,6 +51,9 @@ export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
       {/* Animated Background Elements */}
+            <Head>
+          <title>EssploreAboard - Study Abroad Excellence</title>
+      </Head>
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}

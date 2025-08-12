@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import { 
   GraduationCap, 
   FileText, 
@@ -106,6 +107,9 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
       {/* Background Elements */}
+            <Head>
+          <title>EssploreAboard - Study Abroad Excellence</title>
+      </Head>
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}

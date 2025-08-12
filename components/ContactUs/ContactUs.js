@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import { Send, Mail, Phone, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactUs() {
@@ -88,6 +89,9 @@ export default function ContactUs() {
   return (
     <section className="py-16 sm:py-24 relative overflow-hidden bg-slate-50">
       {/* Background Elements */}
+            <Head>
+          <title>EssploreAboard - Study Abroad Excellence</title>
+      </Head>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ rotate: 360 }}

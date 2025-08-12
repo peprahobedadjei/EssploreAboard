@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 import { Globe, MapPin, Users, GraduationCap } from "lucide-react";
+import Head from "next/head";
 
 export default function FlagsSection() {
       const router = useRouter();
@@ -124,6 +125,9 @@ export default function FlagsSection() {
   return (
     <section className=" sm:py-24 relative overflow-hidden">
       {/* Background Elements */}
+            <Head>
+          <title>EssploreAboard - Study Abroad Excellence</title>
+      </Head>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ rotate: 360 }}

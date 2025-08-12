@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import { Heart, Target, Users, Globe, Award, BookOpen, Shield, Compass } from "lucide-react";
 
 export default function AboutUsSection() {
@@ -51,7 +52,11 @@ export default function AboutUsSection() {
   ];
 
   return (
+    
     <section id="about" className="py-24 bg-white relative overflow-hidden">
+      <Head>
+          <title>EssploreAboard - Study Abroad Excellence</title>
+      </Head>
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
