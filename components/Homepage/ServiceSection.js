@@ -42,6 +42,17 @@ export default function ServicesSection() {
   };
 
   const services = [
+        {
+      id: "sevis-payment",
+      title: "SEVIS Fee Payment",
+      description: "Simplified SEVIS fee payment processing for US student visa applications",
+      icon: DollarSign,
+      color: "from-orange-500 to-red-600",
+      bgColor: "from-orange-50 to-red-50",
+      features: ["Payment Processing", "Receipt Management", "Status Updates", "US Compliance"],
+      link: "/services/sevis-payment",
+      flag: "US Only"
+    },
     {
       id: "school-application",
       title: "School Application",
@@ -55,7 +66,7 @@ export default function ServicesSection() {
     },
     {
       id: "visa-application",
-      title: "Visa Application Service",
+      title: " School Visa Application Service",
       description: "Expert visa guidance and application support for all major study destinations",
       icon: FileText,
       color: "from-green-500 to-emerald-600",
@@ -73,17 +84,18 @@ export default function ServicesSection() {
       features: ["Campus Housing", "Private Rentals", "Homestay Options", "Virtual Tours"],
       link: "/services/accommodation"
     },
+
     {
-      id: "sevis-payment",
-      title: "SEVIS Fee Payment",
-      description: "Simplified SEVIS fee payment processing for US student visa applications",
-      icon: DollarSign,
-      color: "from-orange-500 to-red-600",
-      bgColor: "from-orange-50 to-red-50",
-      features: ["Payment Processing", "Receipt Management", "Status Updates", "US Compliance"],
-      link: "/services/sevis-payment",
-      flag: "US Only"
-    },
+  id: "comprehensive-visa-services",
+  title: "Tourist, Business, Work & Family Reunion Visa Services",
+  description: "Complete visa assistance for all travel needs - leisure, business, employment, and family reunification",
+  icon: FileText,
+  color: "from-blue-500 to-purple-600",
+  bgColor: "from-blue-50 to-purple-50",
+  features: ["All Visa Types", "Document Preparation", "Embassy Support", "Expert Consultation"],
+  link: "/services/comprehensive-visa-services"
+}
+,
     {
       id: "other-services",
       title: "Other Services",
