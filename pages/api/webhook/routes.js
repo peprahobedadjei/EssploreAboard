@@ -28,12 +28,12 @@ export default async function handler(req, res) {
     switch (event.type) {
       case "charge.succeeded":
         // Charge succeeded
-
+console.log ("Payment done ")
         break;
 
       case "charge.failed":
         // Charge failed
-
+console.log ("Payment failed")
         break;
 
       case "charge.pending":
